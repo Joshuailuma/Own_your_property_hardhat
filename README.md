@@ -1,14 +1,19 @@
-# Sample Hardhat Project
-
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
 # Own_your_property_hardhat
+
+This project demonstrates the use of smart contract to own your properties and transfer them to buyers when it is physically sold.
+
+## To test the smart contract run
+
+`yarn hardhat test`
+
+## To check gas usage
+
+`REPORT_GAS=true yarn hardhat test`
+
+## To start a node
+
+`yarn hardhat node`
+
+## To deploy to local blockchain
+
+`yarn hardhat run scripts/deploy.js`

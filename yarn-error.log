@@ -1,0 +1,51 @@
+Arguments: 
+  /usr/local/bin/node /Users/mac/.cache/node/corepack/yarn/1.22.19/bin/yarn.js
+
+PATH: 
+  /usr/local/bin:/usr/bin:/sbin:/Users/mac/.local/bin:/Users/mac/Library/Android/sdk/platform-tools:/Users/mac/Library/Android/flutter/bin:/Users/mac/.cargo/bin:/bin:/usr/sbin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.18.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:109:26)
+
+npm manifest: 
+  {
+    "devDependencies": {
+      "@chainlink/contracts": "^0.5.1",
+      "@ethersproject/abi": "^5.4.7",
+      "@ethersproject/providers": "^5.4.7",
+      "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
+      "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+      "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+      "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
+      "@nomiclabs/hardhat-etherscan": "^3.0.0",
+      "@typechain/ethers-v5": "^10.1.0",
+      "@typechain/hardhat": "^6.1.2",
+      "chai": "^4.2.0",
+      "dotenv": "^16.0.3",
+      "ethers": "^5.7.2",
+      "hardhat": "^2.12.1",
+      "hardhat-deploy": "^0.11.19",
+      "hardhat-gas-reporter": "^1.0.9",
+      "solidity-coverage": "^0.8.0",
+      "typechain": "^8.1.0"
+    },
+    "dependencies": {
+      "hardhat-etherscan": "^1.0.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
