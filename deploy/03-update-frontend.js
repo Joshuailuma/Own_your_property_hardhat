@@ -13,7 +13,7 @@ module.exports = async () => {
     if (process.env.UPDATE_FRONT_END) {
         console.log("Writing to front end...")
         await updateContractAddresses()
-        // await updateAbi()
+        await updateAbi()
         console.log("Front end written!")
     } else{
         console.log("Not updating fronend");
@@ -21,13 +21,13 @@ module.exports = async () => {
 }
 
 async function updateAbi() {
-    const ownYourProperty = await ethers.getContract("NftMarketplace")
+    const ownYourProperty = await ethers.getContract("OwnYourProperty")
     fs.writeFileSync(
-        `${frontEndAbiLocation}NftMarketplace.json`,
+        `${frontEndAbiLocation}OwnYourProperty.json`,
         ownYourProperty.interface.format(ethers.utils.FormatTypes.json)
     )
     fs.writeFileSync(
-        `${frontEndAbiLocation2}NftMarketplace.json`,
+        `${frontEndAbiLocation2}OwnYourProperty.json`,
         ownYourProperty.interface.format(ethers.utils.FormatTypes.json)
     )
 
@@ -45,6 +45,7 @@ async function updateAbi() {
 async function updateContractAddresses() {
     //Update contract address object
     const chainId = network.config.chainId.toString() //Localhost is 31337
+    console.log(`GOt chain id ${chainId}`);
     const ownYourProperty = await ethers.getContract("OwnYourProperty") //Get the contract
     const contractAddresses = JSON.parse(fs.readFileSync(frontEndContractsFile, "utf8")) //Read the networkMapping file in frontend
     //If contractAddress has data alredy

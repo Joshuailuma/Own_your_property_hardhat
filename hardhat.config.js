@@ -9,6 +9,7 @@ const mnemonic = process.env.mnemonic
 module.exports = {
   defaultNetwork: "hardhat",
   networks:{
+
   goerli: {
     url: GOERLI_RPC_URL,
     accounts: { mnemonic: mnemonic },
@@ -21,6 +22,7 @@ hardhat: {
   chainId: 31337,
   // gasPrice: 130000000000,
 },
+
 localhost: {
   chainId: 31337,
 },

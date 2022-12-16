@@ -16,27 +16,26 @@ contract BasicNft is ERC721URIStorage {
         address indexed propertyAddress
     );
 
-    constructor(string memory tokenUri) ERC721("OwnYourProperty", "OYP") {
-        _initializeContract(tokenUri);
+    constructor() ERC721("OwnYourProperty", "OYP") {
         s_tokenCounter = 0;
     }
 
-    function mintNft() public {
-        uint256 newItemId = s_tokenCounter;
+    function mintNft(string memory tokenUri) public {
+        s_TokenUri = tokenUri;
         s_tokenCounter += 1;
         _safeMint(msg.sender, s_tokenCounter); //To mint the nft
 
-        _setTokenURI(s_tokenCounter, s_TokenUri); //Gives/sets the token uri a name
+        _setTokenURI(s_tokenCounter, tokenUri); //Gives/sets the token uri a name
         emit PropertyMinted(s_tokenCounter, msg.sender, address(this));
     }
 
-    function _initializeContract(string memory tokenUri) private {
-        if (s_initialized) {
-            revert BasicNft__AlreadyInitialized();
-        }
-        s_TokenUri = tokenUri;
-        s_initialized = true;
-    }
+    // function _initializeContract(string memory tokenUri) private {
+    //     if (s_initialized) {
+    //         revert BasicNft__AlreadyInitialized();
+    //     }
+    //     s_TokenUri = tokenUri;
+    //     s_initialized = true;
+    // }
 
     function getTokenCounter() public view returns (uint256) {
         return s_tokenCounter;

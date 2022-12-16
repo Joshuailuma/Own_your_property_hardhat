@@ -35,7 +35,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
     log("--------------1st--------------------------------------")
 
-    const arguments = [tokenUri] //If there is no constructor, would be empty
+    const arguments = [] //If there is no constructor, would be empty
 
     const basicNft = await deploy("BasicNft", { // our deployer arguments
         from: deployer,
