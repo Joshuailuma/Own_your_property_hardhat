@@ -1,6 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("hardhat-deploy")
 require("dotenv").config()
+require("@nomiclabs/hardhat-etherscan");
 
 GOERLI_RPC_URL = process.env.GOERLI_RPC_URL
 PRIVATE_KEY = process.env.PRIVATE_KEY
@@ -20,11 +21,14 @@ module.exports = {
  
 hardhat: {
   chainId: 31337,
-  // gasPrice: 130000000000,
+  // gas: 2100000,
+  // gasPrice: 13000000000000,
 },
 
 localhost: {
   chainId: 31337,
+  // gas: 2100000000,
+  // gasPrice: 13000000000000,
 },
 
   },

@@ -29,22 +29,17 @@ async function mintBasicNft() {
     console.log("Minting NFT........");
     //Directly pass in token uri into mintNft Function.
    // We previously passed it in from the contructor
-    const mintedProperty = await deployedContract.mintNft(tokenUri)
+    const tokenUri = await deployedContract.getTokenUri(0)
 
     // const emitS = mintedProperty.emit(deployedContract, "PropertyMinted")
     // console.log(`Emmitng ${emitS}`);
-    console.log("=====Minted property======");
-    // console.log(mintedProperty);
+    console.log("====Result======");
+    
 
-    const mintTxReceipt = await mintedProperty.wait(1)
-    console.log("=====Transaction receipt======");
-
-    // console.log(mintTxReceipt);
+    console.log(tokenUri);
 
 
-    // When that thing above emits an event from the smartcontract
-    const tokenId = mintTxReceipt.events[0].args.tokenId
-    console.log("Approving or taking the NFT");
+    
 }
 
 mintBasicNft()

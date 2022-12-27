@@ -7,22 +7,24 @@ error BasicNft__AlreadyInitialized();
 
 contract BasicNft is ERC721URIStorage {
     uint256 private s_tokenCounter;
-    string internal s_TokenUri;
     bool private s_initialized;
+
+    // Mapping tokenId to tokenUri
+    mapping(uint => string) private tokenIdToUri;
 
     event PropertyMinted(
         uint256 indexed tokenId,
         address indexed ownerAddress,
-        address indexed propertyAddress
+        address propertyAddress
     );
 
-    constructor() ERC721("OwnYourProperty", "OYP") {
+    constructor() ERC721("TransferProperty", "OYP") {
         s_tokenCounter = 0;
     }
 
     function mintNft(string memory tokenUri) public {
-        s_TokenUri = tokenUri;
         s_tokenCounter += 1;
+        tokenIdToUri[s_tokenCounter] = tokenUri;
         _safeMint(msg.sender, s_tokenCounter); //To mint the nft
 
         _setTokenURI(s_tokenCounter, tokenUri); //Gives/sets the token uri a name
@@ -41,8 +43,13 @@ contract BasicNft is ERC721URIStorage {
         return s_tokenCounter;
     }
 
-    function getTokenUri() public view returns (string memory) {
-        return s_TokenUri;
+    function getTokenUri(uint256 tokenId) public view returns (string memory) {
+        require(
+            _exists(tokenId),
+            "ERC721Metadata: URI query for nonexistent token"
+        );
+
+        return tokenIdToUri[tokenId];
     }
 
     function getInitialized() public view returns (bool) {
