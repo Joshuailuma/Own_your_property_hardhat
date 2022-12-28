@@ -42,6 +42,6 @@ contract TransferProperty {
             ownerAddress,
             tokenId
         );
-        emit ItemSold(msg.sender, ownerAddress, tokenId); // EMit the stuff
+        emit ItemSold(ownerAddress, propertyAddress, tokenId); // EMit the stuff
     }
 }
