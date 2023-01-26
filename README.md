@@ -1,4 +1,4 @@
-# Own_your_property_hardhat
+# Own Your Property(OYP) Hardhat project
 
 This Hardhat project demonstrates the use of smart contract to own your properties and transfer them to buyers when it is physically sold. It contains the smart contract for the decentralized application [`Own Your Property(OYP)`](https://github.com/Joshuailuma/Own-Your-Property-Next-JS)
 
