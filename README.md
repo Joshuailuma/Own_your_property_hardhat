@@ -26,18 +26,18 @@ See [hardhat docs](https://hardhat.org/docs) for more hardhat commands
 
 ### BasicNft contract
 
-`mintNft`
+`mintNft(string memory tokenUri)`
 
 - Stores a property
 - Arguments: string tokenUri
 - `tokenUri` = imageUrl of the property
 
-`getCounter`
+`getCounter()`
 
 - Gets the counter state of the contract/ number of property that has been stored since inception
 - Arguments: None
 
-`getTokenUri`
+`getTokenUri(uint256 tokenId)`
 
 - Get the imageURL of a property
 - Arguments: uint256 tokenId
@@ -45,7 +45,7 @@ See [hardhat docs](https://hardhat.org/docs) for more hardhat commands
 
 ### Transfer property contract
 
-`transferItem`
+`transferItem(address propertyAddress, uint256 tokenId, address ownerAddress)`
 
 - Transfers property from one address to the other
 - Arguments: address propertyAddress, uint256 tokenId, address ownerAddress
