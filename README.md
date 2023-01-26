@@ -2,7 +2,7 @@
 
 This Hardhat project demonstrates the use of smart contract to own your properties and transfer them to buyers when it is physically sold. It contains the smart contract for the decentralized application [`Own Your Property(OYP)`](https://github.com/Joshuailuma/Own-Your-Property-Next-JS)
 
-The contract is deployed to the Goerli Testnet with addresses [0xF74EBb7bB8883E22a8Be30F8C2EDaF7f4B58f360](https://goerli.etherscan.io/address/0xF74EBb7bB8883E22a8Be30F8C2EDaF7f4B58f360) that facilitates storage of properties and [0xB2a74AcbbB57D2ceD305724a5e6b2c5c03F453f3] that facilites transfer of properties (https://goerli.etherscan.io/address/0xB2a74AcbbB57D2ceD305724a5e6b2c5c03F453f3)
+The contract is deployed to the Goerli Testnet with addresses [0xF74EBb7bB8883E22a8Be30F8C2EDaF7f4B58f360](https://goerli.etherscan.io/address/0xF74EBb7bB8883E22a8Be30F8C2EDaF7f4B58f360) that facilitates storage of properties and [0xB2a74AcbbB57D2ceD305724a5e6b2c5c03F453f3](https://goerli.etherscan.io/address/0xB2a74AcbbB57D2ceD305724a5e6b2c5c03F453f3) that facilites transfer of properties
 
 ## Getting started
 
