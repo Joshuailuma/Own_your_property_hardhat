@@ -1,3 +1,4 @@
+//If we want the result to make changes to our front end
 const {
   frontEndContractsFile,
   frontEndContractsFile2,
@@ -12,8 +13,9 @@ const { network } = require("hardhat");
 module.exports = async () => {
   if (process.env.UPDATE_FRONT_END) {
     console.log("Writing to front end...");
-    await updateContractAddresses();
-    await updateAbi();
+    // Uncommment below if you want result to make changes to frontend
+    // await updateContractAddresses();
+    // await updateAbi();
     console.log("Front end written!");
   } else {
     console.log("Not updating fronend");

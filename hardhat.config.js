@@ -7,6 +7,7 @@ GOERLI_RPC_URL = process.env.GOERLI_RPC_URL
 PRIVATE_KEY = process.env.PRIVATE_KEY
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 const mnemonic = process.env.mnemonic
+
 module.exports = {
   defaultNetwork: "hardhat",
   networks:{
