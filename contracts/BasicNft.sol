@@ -35,7 +35,7 @@ contract BasicNft is ERC721URIStorage {
     }
 
     /*
-     * @notice Method to the tokenCounter Number of the property
+     * @notice Method to get the tokenCounter Number of the property
      */
     function getTokenCounter() public view returns (uint256) {
         return s_tokenCounter;
@@ -46,10 +46,7 @@ contract BasicNft is ERC721URIStorage {
      * @param tokenId Token ID of the property
      */
     function getTokenUri(uint256 tokenId) public view returns (string memory) {
-        require(
-            _exists(tokenId),
-            "ERC721Metadata: URI query for nonexistent token"
-        );
+        require(_exists(tokenId), "ERC721Metadata: Token ID is does not exist");
         return tokenIdToUri[tokenId];
     }
 }
