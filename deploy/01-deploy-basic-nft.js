@@ -4,19 +4,14 @@ const { storeImages, storeTokenUriMetadata } = require("../utils/uploadToPinata"
 const { verify } = require("../utils/verify")
 
 const imagesLocation = "./images/"
-let tokenUri ="ipfs://QmaVkBn2tKmjbhphU7eyztbvSQU5EXDdqRyXZtRhSGgJGo" //The uri stored in pinata or incae not uploaded
+let tokenUri ="ipfs://QmdAgKuYYxxySakQPpqv6XcTW54WePVZ6TFbQXXz3NrACW" //The uri stored in pinata or incase not uploaded
 
 //The objects we are to deploy on pinata
 const metadataTemplate = {
-    name: "",
-    description: "",
-    image: "",
-    attributes: [
-        {
-            trait_type: "Cuteness",
-            value: 100,
-        },
-    ],
+    name: "My glasses",
+    description: "Nice glasses",
+    "serialNumber":"qsyd746",
+    image: "QmdAgKuYYxxySakQPpqv6XcTW54WePVZ6TFbQXXz3NrACW",
 }
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
@@ -49,21 +44,18 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         log("Verifying...")
         await verify(basicNft.address, arguments)
     } else{
-        console.log(`Local host`);
+        console.log(`Localhost`);
     }
     log("----------------------------------------------------")
 }
 
 async function handleTokenUri() {
-    // Check out https://github.com/PatrickAlphaC/nft-mix for a pythonic version of uploading
-    // to the raw IPFS-daemon from https://docs.ipfs.io/how-to/command-line-quick-start/
-    // You could also look at pinata https://www.pinata.cloud/
     
     const { responses: imageUploadResponses, files } = await storeImages(imagesLocation)
     for (imageUploadResponseIndex in imageUploadResponses) {
         let tokenUriMetadata = { ...metadataTemplate }
-        tokenUriMetadata.name = files[imageUploadResponseIndex].replace(".png", "")
-        tokenUriMetadata.description = `An adorable ${tokenUriMetadata.name} pup!`
+        tokenUriMetadata.name = files[imageUploadResponseIndex].replace(".jpg", "")
+        tokenUriMetadata.description = tokenUriMetadata.name
         tokenUriMetadata.image = `ipfs://${imageUploadResponses[imageUploadResponseIndex].IpfsHash}`
         console.log(`Uploading ${tokenUriMetadata.name}...`)
         const metadataUploadResponse = await storeTokenUriMetadata(tokenUriMetadata)
@@ -71,8 +63,7 @@ async function handleTokenUri() {
         // the image url
         tokenUri = `ipfs://${metadataUploadResponse.IpfsHash}`
     }
-    console.log("Token URIs uploaded! They are:")
-    console.log(tokenUri)
+    console.log(`Token Uri is ${tokenUri}`)
     return tokenUri
 }
 

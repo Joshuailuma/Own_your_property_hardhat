@@ -5,7 +5,7 @@ const { developmentChains } = require("../helper-hardhat-config");
 
 !developmentChains.includes(network.name)
   ? describe.skip
-  : describe("Nft Marketplace Unit Tests", function () {
+  : describe("Transfer Property Tests", function () {
       let connection,
         transferPropertyContract,
         basicNftContract,
@@ -23,7 +23,7 @@ const { developmentChains } = require("../helper-hardhat-config");
         transferPropertyContract = await ethers.getContract("TransferProperty");
         basicNftContract = await ethers.getContract("BasicNft");
         // Store a property
-        await basicNftContract.mintNft("ipfs://QmaVkBn2tKmjbhphU7eyztbvSQU5EXDdqRyXZtRhSGgJGo");
+        await basicNftContract.mintNft("ipfs://QmdAgKuYYxxySakQPpqv6XcTW54WePVZ6TFbQXXz3NrACW");
         // Approve the property for transfer
         await basicNftContract.approve(
           transferPropertyContract.address,

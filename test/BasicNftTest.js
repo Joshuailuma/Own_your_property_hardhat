@@ -1,7 +1,7 @@
 const { assert, expect } = require("chai")
 const { network, deployments, ethers } = require("hardhat")
 const { developmentChains } = require("../helper-hardhat-config")
-const tokenUri ="ipfs://QmaVkBn2tKmjbhphU7eyztbvSQU5EXDdqRyXZtRhSGgJGo" //The uri stored in pinata or incase not uploaded
+const tokenUri ="ipfs://QmdAgKuYYxxySakQPpqv6XcTW54WePVZ6TFbQXXz3NrACW" //The uri stored in pinata or incase not uploaded
 
 !developmentChains.includes(network.name)
     ? describe.skip

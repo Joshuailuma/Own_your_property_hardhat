@@ -29,7 +29,7 @@ contract TransferProperty {
     /*
      * @notice Method to transfer listed property
      * @param propertyAddress Address of NFT contract
-     * @param tokenId Token ID of NFT
+     * @param tokenId Token ID of NFT/property
      */
     function transferItem(
         address propertyAddress,
@@ -43,5 +43,19 @@ contract TransferProperty {
             tokenId
         );
         emit ItemSold(ownerAddress, propertyAddress, tokenId); // EMit the stuff
+    }
+
+    /*
+     * @notice Method to check the owner of a property
+     * @param propertyAddress Address of NFT contract
+     * @param tokenId Token ID of NFT/property
+     */
+    function checkOwner(
+        address propertyAddress,
+        uint256 tokenId
+    ) public view returns (address) {
+        IERC721 nft = IERC721(propertyAddress);
+        address owner = nft.ownerOf(tokenId);
+        return owner;
     }
 }

@@ -12,13 +12,9 @@ const { network } = require("hardhat");
 
 module.exports = async () => {
   if (process.env.UPDATE_FRONT_END) {
-    console.log("Writing to front end...");
-    // Uncommment below if you want result to make changes to frontend
-    // await updateContractAddresses();
-    // await updateAbi();
-    console.log("Front end written!");
+    console.log("Writing to the front end project");
   } else {
-    console.log("Not updating fronend");
+    console.log("Failed to update fronend");
   }
 };
 

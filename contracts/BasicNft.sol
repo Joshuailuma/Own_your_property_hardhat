@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
 error BasicNft__AlreadyInitialized();
 
@@ -21,7 +21,10 @@ contract BasicNft is ERC721URIStorage {
         s_tokenCounter = 0;
     }
 
-    // Store a property
+    /*
+     * @notice Method to store a property
+     * @param tokenUri of the property to store
+     */
     function mintNft(string memory tokenUri) public {
         s_tokenCounter += 1;
         tokenIdToUri[s_tokenCounter] = tokenUri;
@@ -31,12 +34,17 @@ contract BasicNft is ERC721URIStorage {
         emit PropertyMinted(s_tokenCounter, msg.sender, address(this));
     }
 
-    // Get the token counter of a property
+    /*
+     * @notice Method to the tokenCounter Number of the property
+     */
     function getTokenCounter() public view returns (uint256) {
         return s_tokenCounter;
     }
 
-    // Get the tokenUri of a property
+    /*
+     * @notice Method to get the tokenUri of a particular property
+     * @param tokenId Token ID of the property
+     */
     function getTokenUri(uint256 tokenId) public view returns (string memory) {
         require(
             _exists(tokenId),

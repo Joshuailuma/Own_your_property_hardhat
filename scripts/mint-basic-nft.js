@@ -1,6 +1,6 @@
 const { ethers, network } = require("hardhat")
 
-const tokenUri ="ipfs://QmaVkBn2tKmjbhphU7eyztbvSQU5EXDdqRyXZtRhSGgJGo"
+const tokenUri ="ipfs://QmdAgKuYYxxySakQPpqv6XcTW54WePVZ6TFbQXXz3NrACW"
 
 
 async function mintBasicNft() {
@@ -26,7 +26,7 @@ async function mintBasicNft() {
 
 
 
-    console.log("Minting NFT........");
+    console.log("Minting NFT......");
     //Directly pass in token uri into mintNft Function.
    // We previously passed it in from the contructor
     const mintedProperty = await deployedContract.mintNft(tokenUri)
@@ -44,7 +44,7 @@ async function mintBasicNft() {
 
     // When that thing above emits an event from the smartcontract
     const tokenId = mintTxReceipt.events[0].args.tokenId
-    console.log("Approving or taking the NFT");
+    console.log("Approving the NFT");
 }
 
 mintBasicNft()

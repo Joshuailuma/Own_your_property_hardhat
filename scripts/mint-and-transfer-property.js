@@ -1,5 +1,4 @@
 const { ethers, network } = require("hardhat");
-// const { moveBlocks } = require("../utils/move-blocks")
 const { localhost } = require("../hardhat.config")
 
 async function mintAndTransfer() {
@@ -9,7 +8,7 @@ async function mintAndTransfer() {
   deployer = accounts[0]; //deployer
   player = accounts[1]; //Player
   console.log("Minting NFT...");
-  const mintTx = await basicNftContract.mintNft("ipfs://QmaVkBn2tKmjbhphU7eyztbvSQU5EXDdqRyXZtRhSGgJGo");
+  const mintTx = await basicNftContract.mintNft("ipfs://QmdAgKuYYxxySakQPpqv6XcTW54WePVZ6TFbQXXz3NrACW");
   const mintTxReceipt = await mintTx.wait(1);
   // When that thing above emits an event from the smartcontract
   const tokenId = mintTxReceipt.events[0].args.tokenId;
@@ -33,8 +32,7 @@ async function mintAndTransfer() {
   console.log(result);
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
+
 mintAndTransfer()
   .then(() => process.exit(0))
   .catch((error) => {

@@ -1,5 +1,5 @@
 const { run } = require("hardhat")
-
+// A boiler plate to verify contracts
 const verify = async (contractAddress, args) => {
     console.log("Verifying contract...")
     try {

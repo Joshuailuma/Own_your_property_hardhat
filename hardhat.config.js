@@ -22,14 +22,10 @@ module.exports = {
  
 hardhat: {
   chainId: 31337,
-  // gas: 2100000,
-  // gasPrice: 13000000000000,
 },
 
 localhost: {
   chainId: 31337,
-  // gas: 2100000000,
-  // gasPrice: 13000000000000,
 },
 
   },
@@ -50,9 +46,6 @@ etherscan: {
 gasReporter: {
   enabled: false,
   currency: "USD",
-  // outputFile: "gas-report.txt",
-  // noColors: true,
-  // coinmarketcap: COINMARKETCAP_API_KEY,
 }, 
 //For differnt versions of solidity
 solidity: {
