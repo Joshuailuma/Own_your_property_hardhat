@@ -41,7 +41,7 @@ const tokenUri ="ipfs://QmdAgKuYYxxySakQPpqv6XcTW54WePVZ6TFbQXXz3NrACW" //The ur
               storedProperty.wait()
               // See If token uri stored in Blockchain is what we assigned to it
                 const tokenUriFromBlockchain = await basicNft.getTokenUri(1)
-                assert(tokenUriFromBlockchain.includes("ipfs://QmaVkBn2tKmjbhphU7"))
+                assert(tokenUriFromBlockchain.includes("ipfs://QmdAgKuYYxxySakQPpqv6"))
             })
         })
         })
